@@ -10,6 +10,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
+      <%= link_to 'English', root_path(locale: 'en') %>
+      <%= link_to '日本語', root_path(locale: 'ja') %>
     <% if user_signed_in? %>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
