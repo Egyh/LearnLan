@@ -34,3 +34,10 @@ en:
   homes:
     top:
       title: "Here is a top page"
+      
+  articles:
+       new:
+         newpost: "Newpost"
+         title: "Title"
+         text: "Text"
+         submit: "Submit"
