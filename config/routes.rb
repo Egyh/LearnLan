@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
    scope "(:locale)", locale: /#{I18n.available_locales.map(&:to_s).join("|")}/ do
      root to: "homes#top"
-     get 'home/about' => 'homes#about'
+     get 'about' => 'homes#about'
       get 'articles/new'
       post 'articles' => 'articles#create'   #ここを追記します
       get 'articles/index' 
