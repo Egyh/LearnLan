@@ -1,4 +1,9 @@
 ja:
+  layouts:
+    application:
+      signup: "新規登録"
+      login: "ログイン"
+
   homes:
     top:
       title: "ここはトップページです"

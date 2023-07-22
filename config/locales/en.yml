@@ -30,11 +30,15 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  
+  layouts:
+    application:
+      signup: "Sign up"
+      login: "Log in"
+
   homes:
     top:
       title: "Here is a top page"
-      
+
   articles:
        new:
          newpost: "Newpost"
