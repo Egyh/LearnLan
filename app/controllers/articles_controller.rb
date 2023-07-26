@@ -5,11 +5,12 @@ class ArticlesController < ApplicationController
 
   def create
     # １.&2. データを受け取り新規登録するためのインスタンス作成
-    article = Article.new(article_params)
+    @article = Article.new(article_params)
+    @article.user_id = current_user.id
     # 3. データをデータベースに保存するためのsaveメソッド実行
-    article.save
+    @article.save
     # 4. トップ画面へリダイレクト
-    redirect_to '/articles/index'
+    redirect_to articles_path
   end
 
   def index
@@ -25,12 +26,9 @@ class ArticlesController < ApplicationController
   end
 
   def update
-     @article = Article.find(params[:id])
-    if @article.update(article_params)
-      redirect_to article_path(@article), notice: "You have updated book successfully."
-    else
-      render "edit"
-    end
+     article = Article.find(params[:id])
+     article.update(article_params)
+     redirect_to article_path(article.id)
   end
 
   private
