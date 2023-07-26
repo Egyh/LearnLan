@@ -21,9 +21,19 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
   end
 
-   private
+  def update
+     @article = Article.find(params[:id])
+    if @article.update(article_params)
+      redirect_to article_path(@article), notice: "You have updated book successfully."
+    else
+      render "edit"
+    end
+  end
+
+  private
   # ストロングパラメータ
   def article_params
     params.require(:article).permit(:title, :body)
