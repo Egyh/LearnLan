@@ -30,8 +30,8 @@ class ArticlesController < ApplicationController
      article.update(article_params)
      redirect_to article_path(article.id)
   end
-  
-  def destory
+
+  def destroy
     article = Article.find(params[:id])
     article.destroy
     redirect_to articles_path
