@@ -6,4 +6,6 @@ ja:
 
   homes:
     top:
-      title: "ここはトップページです"
+      title: "つぶやきで、世界はつながる"
+      signup: "新規登録"
+      login: "ログイン"
