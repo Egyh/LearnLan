@@ -1,3 +1,28 @@
-<h1>Homes#top</h1>
-<h1><%= t(".title") %></h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<header>
+  <div class="header-logo">
+    LearnLan
+  </div>
+  <ul class="header-language">
+    <li><%= link_to 'English', root_path(locale: 'en') %></li>
+    <li><%= link_to '日本語', root_path(locale: 'ja') %></li>
+  </ul>
+</header>
+
+<div class="main top-main">
+  <div class="top-message">
+    <h2>つぶやきで、世界はつながる</h2>
+    <p>今の気持ちをつぶやいてみよう！</p>
+  </div>
+   <% if user_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to t(".signup"), new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to t(".login"), new_user_session_path %>
+      </li>
+    <% end %>
+</div>
